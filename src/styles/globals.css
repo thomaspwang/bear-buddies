@@ -12,3 +12,15 @@ h1 {
     font-family: 'DM Sans';
     font-weight: bold;
 }
+
+.primary {
+    color: #7aa3ff;
+    font-family: 'DM Sans';
+    font-weight: bold;
+}
+
+.secondary {
+    color: #CBCBCB;
+    font-family: 'DM Sans';
+    font-weight: normal;
+}
