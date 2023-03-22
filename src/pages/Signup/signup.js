@@ -70,7 +70,7 @@ function SignUpPage() {
                         </div>
                     </div>
                     <div className="signup-btn-cont">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
                     </div> 
                 </form>
             </div>
