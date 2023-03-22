@@ -7,10 +7,15 @@ body {
     background-color: white;
 }
 
-h1 {
+.head {
     color: #000000;
     font-family: 'DM Sans';
     font-weight: bold;
+}
+
+p {
+    color: #000000;
+    font-family: 'DM Sans';
 }
 
 .primary {
@@ -23,4 +28,5 @@ h1 {
     color: #CBCBCB;
     font-family: 'DM Sans';
     font-weight: normal;
+    height: auto;
 }
