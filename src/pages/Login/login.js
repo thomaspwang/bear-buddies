@@ -31,7 +31,7 @@ function LogInPage() {
             <div className="line"></div>
             <div className="not-member">
                 <h5 className="col-item-member">not a member?</h5>
-                <Button variant="primary" type="submit" className="col-item-member-btn">
+                <Button variant="primary" type="submit" className="col-item-member-btn" href="../Signup/signup">
                     join the community!
                 </Button>
             </div>
