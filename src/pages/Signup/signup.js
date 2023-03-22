@@ -14,50 +14,64 @@ function SignUpPage() {
             </div>
             <div className="data-container">
                 <form>
-                    <div class="col-cont">
-                        <div class="col-items">
-                            <label for="inputEmail4">first name</label>
+                    <div className="col-cont">
+                        <div className="col-items">
+                            <label>first name</label>
                             <input type="text" class="form-control"></input>
                         </div>
-                        <div class="col-items">
-                            <label for="inputPassword4">last name</label>
+                        <div className="col-items">
+                            <label>last name</label>
                             <input type="text" class="form-control"></input>
                         </div>
                     </div>
-                    <div class="long-text-box">
-                        <label for="inputAddress">email</label>
-                        <input type="text" class="form-control"></input>
+                    <div className="long-text-box">
+                        <label>email</label>
+                        <input type="text" className="form-control"></input>
                     </div>
-                    <div class="form-group">
-                        <label for="inputAddress2">Address 2</label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"></input>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="inputCity">City</label>
-                            <input type="text" class="form-control" id="inputCity"></input>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="inputState">State</label>
-                            <select id="inputState" class="form-control">
-                                <option selected>Choose...</option>
-                                <option>...</option>
+                    <div className="col-cont">
+                        <div className="col-items">
+                            <label>gender</label>
+                            <select className="form-control">
+                                <option selected>select gender</option>
+                                <option>male</option>
+                                <option>female</option>
+                                <option>other</option>
                             </select>
                         </div>
-                        <div class="form-group col-md-2">
-                            <label for="inputZip">Zip</label>
-                            <input type="text" class="form-control" id="inputZip"></input>
+                        <div className="col-items">
+                            <label>major</label>
+                            <input type="text" className="form-control"></input>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck"></input>
-                            <label class="form-check-label" for="gridCheck">
-                                Check me out
-                            </label>
+                    <div className="col-cont">
+                        <div className="col-items">
+                            <label>graduation year</label>
+                            <select className="form-control">
+                                <option selected className="default-text-fill">select year</option>
+                                <option>2026</option>
+                                <option>2025</option>
+                                <option>2024</option>
+                                <option>2023</option>
+                            </select>
                         </div>
-                     </div>
-                    <button type="submit" class="btn btn-primary">Sign in</button>
+                        <div className="col-items">
+                            <label>phone number</label>
+                            <input type="text" className="form-control"></input>
+                        </div>
+                    </div>
+                    <div className="col-cont">
+                        <div className="col-items">
+                            <label>password</label>
+                            <input type="text" class="form-control"></input>
+                        </div>
+                        <div className="col-items">
+                            <label>confirm password</label>
+                            <input type="text" class="form-control"></input>
+                        </div>
+                    </div>
+                    <div className="signup-btn-cont">
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </div> 
                 </form>
             </div>
         </div>
