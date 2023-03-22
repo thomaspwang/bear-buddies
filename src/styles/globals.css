@@ -1,0 +1,32 @@
+a {
+    color: #000000;
+    font-family: 'DM Sans';
+}
+
+body {
+    background-color: white;
+}
+
+.head {
+    color: #000000;
+    font-family: 'DM Sans';
+    font-weight: bold;
+}
+
+p {
+    color: #000000;
+    font-family: 'DM Sans';
+}
+
+.primary {
+    color: #7aa3ff;
+    font-family: 'DM Sans';
+    font-weight: bold;
+}
+
+.secondary {
+    color: #CBCBCB;
+    font-family: 'DM Sans';
+    font-weight: normal;
+    height: auto;
+}

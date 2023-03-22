@@ -10,8 +10,15 @@
     width: 403px;
 }
 
+#badgeText {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
+}
+
 .body {
     display: flex;
+    justify-content: end;
     height: 68%;
     max-height: 68%;
     column-gap: 20px;
@@ -25,6 +32,8 @@
 }
 
 .button {
+    background-color: #7aa3ff;
+    border-color: #7aa3ff;
     border-radius: 50px;
 }
 
@@ -52,6 +61,10 @@
 
 .mainImage {
     border-radius: 25px;
+    height: auto;
+    max-height: 134px;
+    max-width: 134px;
+    width: auto;
 }
 
 #para {
