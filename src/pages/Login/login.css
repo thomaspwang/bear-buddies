@@ -70,3 +70,8 @@
 .col-item-member {
     flex: 1 0 50%;
 }
+
+.col-item-member-btn {
+    flex: 1 0 50%;
+    background-color: #7AA3FF;
+}

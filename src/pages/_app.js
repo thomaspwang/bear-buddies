@@ -1,5 +1,5 @@
 import '@/styles/globals.css'
-import '@/styles/login.css'
+import '@/pages/Login/login.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
