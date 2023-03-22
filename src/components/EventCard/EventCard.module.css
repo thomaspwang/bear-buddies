@@ -1,0 +1,52 @@
+.active {
+    border: #CBCBCB solid 1px;
+    border-radius: 25px;
+    margin: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    height: 225px;
+    width: 403px;
+}
+
+.body {
+    display: flex;
+    height: 68%;
+    column-gap: 20px;
+    width: 100%;
+}
+
+.iconText {
+    align-content: center;
+    column-gap: 7px;
+    display: flex;
+    flex-direction: row;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainImage {
+    border-radius: 25px;
+}
+
+#para {
+    font-size: 14px;
+}
+
+.pfp {
+    border-radius: 75px;
+}
+
+#title {
+    font-size: 28px;
+}
+
+.top {
+    align-items: baseline;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
