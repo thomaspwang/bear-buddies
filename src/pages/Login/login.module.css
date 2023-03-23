@@ -6,17 +6,17 @@
     text-align: center;
 }
 
-.page-title {
+.page_title {
     margin-top: 100px;
     display: flex;
     width: 400px;
     height: 50px;
     justify-content: center;
     color: #7AA3FF;
-    font-weight: bold;
+    font-weight: bold !important;
 }
 
-.form-style {
+.form_style {
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
@@ -30,20 +30,21 @@
     margin-top: 20px;
 }
 
-.form-container {
+.form_container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
 }
 
-.mb-3 {
+.mb_3 {
     width: 450px;
+    margin-bottom: 10px;
     font-size: 20px;
 }
 
-.submit-btn {
-    margin-top: 10px;
+.submit_btn {
+    margin-top: 20px;
     width: 450px;
     background-color: #7AA3FF !important;
     border-radius: 10px !important;
@@ -57,7 +58,7 @@
     margin-bottom: 20px;
 }
 
-.not-member-container {
+.not_member_container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -68,17 +69,17 @@
     justify-content: center !important;
 }
 
-.col-item-member {
+.col_item_member {
     flex: 1 0 50%;
 }
 
-.col-item-member:first-child {
+.col_item-member:first-child {
     margin-left: 25px;
 }
 
 
 
-.col-item-member-btn {
+.col_item_member_btn {
     flex: 1 0 50%;
     background-color: #7AA3FF !important;
     margin-right: 25px;
