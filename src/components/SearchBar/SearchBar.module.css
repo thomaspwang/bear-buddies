@@ -1,0 +1,12 @@
+.searchButton {
+    height: 32px;
+    background-color: white;
+    border-color: #CBCBCB;
+}
+
+.inputArea {
+    height: 32px;
+    background-color: white;
+    border-color: #CBCBCB;
+    border-radius: 30px;
+}
