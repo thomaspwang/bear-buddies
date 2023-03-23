@@ -1,6 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from './signup.module.css';
+import Button from 'react-bootstrap/Button';
 
 
 function SignUpPage() {
@@ -10,7 +11,7 @@ function SignUpPage() {
                 <h1>Sign Up for Bear Buddies</h1>
             </div>
             <div>
-                <h4>Create a free account or <a className={styles.blue_txt} href="../Login/login">login</a></h4>
+                <h4>Create a free account or <a className={styles.blue_txt} href="../Login/login" style={{textDecoration: 'none', font: 'inherit'}}>login</a></h4>
             </div>
             <div className={styles.data_container}>
                 <form>
@@ -32,7 +33,7 @@ function SignUpPage() {
                         <div className={styles.col_items}>
                             <label>gender</label>
                             <select className="form-control">
-                                <option selected>select gender</option>
+                                <option value="" disabled selected hidden>select gender&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⌄</option>
                                 <option>male</option>
                                 <option>female</option>
                                 <option>other</option>
@@ -47,7 +48,9 @@ function SignUpPage() {
                         <div className={styles.col_items}>
                             <label>graduation year</label>
                             <select className="form-control">
-                                <option selected className={styles.defualt_text_fill}>select year</option>
+                                <option value="" disabled selected hidden className={styles.default_text}>
+                                    <pre>select year&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⌄</pre>
+                                </option>
                                 <option>2026</option>
                                 <option>2025</option>
                                 <option>2024</option>
@@ -70,7 +73,7 @@ function SignUpPage() {
                         </div>
                     </div>
                     <div className="signup-btn-cont">
-                        <button type="submit" className={styles.btn}>Sign Up</button>
+                        <Button variant="primary" type="submit" className={styles.btn}>Sign Up</Button>
                     </div> 
                 </form>
             </div>

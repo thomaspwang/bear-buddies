@@ -1,6 +1,5 @@
 .container {
     display: flex;
-    font-style: "DM Sans";
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
@@ -13,7 +12,7 @@
     height: 40px;
     justify-content: center;
     color: #7AA3FF;
-
+    margin-bottom: 10px;
 }
 
 .blue_txt {
@@ -45,8 +44,8 @@
     margin-left: 20px;
 }
 
-.default_text_fill {
-    color: grey !important;
+.default_text option:checked {
+    color: red !important;
 }
 
 .long_text_box {
@@ -54,12 +53,15 @@
 }
 
 
+
+
+
+
 .btn {
-    margin-top: 10px;
-    border-radius: 15px !important;
+    margin-top: 20px;
     width: 500px;
-    font-weight: bold;
     background-color: #7AA3FF !important;
-    box-shadow: 2px 2px 4px grey;
-    font-size: 20px !important;
+    border-radius: 10px !important;
+    font-size: 18px;
+    font-weight: 600;
 }
