@@ -1,5 +1,4 @@
 import '@/styles/globals.css'
-import '@/pages/Signup/signup.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 
