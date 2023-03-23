@@ -1,9 +1,7 @@
 import React from "react";
 import Form from 'react-bootstrap/Form';
-import {Button} from "react-bootstrap";
-
-
-
+import Button from "react-bootstrap/Button";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function LogInPage() {
     return (
@@ -16,9 +14,7 @@ function LogInPage() {
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>email</Form.Label>
                         <Form.Control type="email" placeholder="enter email" />
-                        
                     </Form.Group>
-
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>password</Form.Label>
                         <Form.Control type="password" placeholder="password" />
@@ -29,7 +25,7 @@ function LogInPage() {
                 </Form>
             </div>
             <div className="line"></div>
-            <div className="not-member">
+            <div className="not-member-container">
                 <h5 className="col-item-member">not a member?</h5>
                 <Button variant="primary" type="submit" className="col-item-member-btn" href="../Signup/signup">
                     join the community!
@@ -40,10 +36,3 @@ function LogInPage() {
 }
 
 export default LogInPage;
-
-/*
-NOTES:
-    Use React-Bootstrap components (I think they’re called forms?)
-    Feel free to make a modular component called “Login Button” but you also don’t have to
-    Use React-Bootstrap for dropdowns
-*/
