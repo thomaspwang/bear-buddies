@@ -1,15 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 .textEdit {
     margin-top: 10px;
-    width: 200px;
+    width: 250px;
     border-radius: 50px;
     background-color: #FFFFFF;
-    font-family: 'Inter', Inter;
     color: #CBCBCB;
     border-color: #CBCBCB;
     border-width: 2px;
     font-size: 30px;
     font-weight: bolder;
-    
 }
