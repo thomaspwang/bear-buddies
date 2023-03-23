@@ -16,11 +16,11 @@ function SignUpPage() {
                     <div className="col-cont">
                         <div className="col-items">
                             <label>first name</label>
-                            <input type="text" class="form-control"></input>
+                            <input type="text" className="form-control"></input>
                         </div>
                         <div className="col-items">
                             <label>last name</label>
-                            <input type="text" class="form-control"></input>
+                            <input type="text" className="form-control"></input>
                         </div>
                     </div>
                     <div className="long-text-box">
@@ -61,15 +61,15 @@ function SignUpPage() {
                     <div className="col-cont">
                         <div className="col-items">
                             <label>password</label>
-                            <input type="text" class="form-control"></input>
+                            <input type="text" className="form-control"></input>
                         </div>
                         <div className="col-items">
                             <label>confirm password</label>
-                            <input type="text" class="form-control"></input>
+                            <input type="text" className="form-control"></input>
                         </div>
                     </div>
                     <div className="signup-btn-cont">
-                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                        <button type="submit" className="btn btn-primary">Sign Up</button>
                     </div> 
                 </form>
             </div>
