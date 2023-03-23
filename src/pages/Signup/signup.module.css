@@ -1,12 +1,12 @@
 .container {
     display: flex;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: "DM Sans";
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
 }
 
-.signup-title {
+.signup_title {
     margin-top: 50px;
     display: flex;
     width: 500px;
@@ -16,40 +16,40 @@
 
 }
 
-.blue-txt {
+.blue_txt {
     color: #7AA3FF;
 }
 
-.data-container {
+.data_container {
     margin-top: 20px;
     width: 500px;
     height: 500px;
 
 }
 
-.col-cont {
+.col_cont {
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
 }
 
-.col-items {
+.col_items {
     flex: 1;
 }
 
-.col-items:first-child {
+.col_items:first-child {
     margin-right: 20px;
 }
 
-.col-items:last-child {
+.col_items:last-child {
     margin-left: 20px;
 }
 
-.default-text-fill {
+.default_text_fill {
     color: grey !important;
 }
 
-.long-text-box {
+.long_text_box {
     margin-bottom: 10px;
 }
 

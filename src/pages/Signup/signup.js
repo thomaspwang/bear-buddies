@@ -1,34 +1,35 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
+import styles from './signup.module.css';
 
 
 function SignUpPage() {
     return (
-        <div className="container">
-            <div className="signup-title">
+        <div className={styles.container}>
+            <div className={styles.signup_title}>
                 <h1>Sign Up for Bear Buddies</h1>
             </div>
             <div>
-                <h4>Create a free account or <a className="blue-txt" href="../Login/login">login</a></h4>
+                <h4>Create a free account or <a className={styles.blue_txt} href="../Login/login">login</a></h4>
             </div>
-            <div className="data-container">
+            <div className={styles.data_container}>
                 <form>
-                    <div className="col-cont">
-                        <div className="col-items">
+                    <div className={styles.col_cont}>
+                        <div className={styles.col_items}>
                             <label>first name</label>
                             <input type="text" className="form-control"></input>
                         </div>
-                        <div className="col-items">
+                        <div className={styles.col_items}>
                             <label>last name</label>
                             <input type="text" className="form-control"></input>
                         </div>
                     </div>
-                    <div className="long-text-box">
+                    <div className={styles.long_text_box}>
                         <label>email</label>
                         <input type="text" className="form-control"></input>
                     </div>
-                    <div className="col-cont">
-                        <div className="col-items">
+                    <div className={styles.col_cont}>
+                        <div className={styles.col_items}>
                             <label>gender</label>
                             <select className="form-control">
                                 <option selected>select gender</option>
@@ -37,39 +38,39 @@ function SignUpPage() {
                                 <option>other</option>
                             </select>
                         </div>
-                        <div className="col-items">
+                        <div className={styles.col_items}>
                             <label>major</label>
                             <input type="text" className="form-control"></input>
                         </div>
                     </div>
-                    <div className="col-cont">
-                        <div className="col-items">
+                    <div className={styles.col_cont}>
+                        <div className={styles.col_items}>
                             <label>graduation year</label>
                             <select className="form-control">
-                                <option selected className="default-text-fill">select year</option>
+                                <option selected className={styles.defualt_text_fill}>select year</option>
                                 <option>2026</option>
                                 <option>2025</option>
                                 <option>2024</option>
                                 <option>2023</option>
                             </select>
                         </div>
-                        <div className="col-items">
+                        <div className={styles.col_items}>
                             <label>phone number</label>
                             <input type="text" className="form-control"></input>
                         </div>
                     </div>
-                    <div className="col-cont">
-                        <div className="col-items">
+                    <div className={styles.col_cont}>
+                        <div className={styles.col_items}>
                             <label>password</label>
                             <input type="text" className="form-control"></input>
                         </div>
-                        <div className="col-items">
+                        <div className={styles.col_items}>
                             <label>confirm password</label>
                             <input type="text" className="form-control"></input>
                         </div>
                     </div>
                     <div className="signup-btn-cont">
-                        <button type="submit" className="btn btn-primary">Sign Up</button>
+                        <button type="submit" className={styles.btn}>Sign Up</button>
                     </div> 
                 </form>
             </div>
