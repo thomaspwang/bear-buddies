@@ -5,9 +5,9 @@
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 10px;
-    padding-bottom: 10px;
-    height: 250px;
-    width: 403px;
+    padding-bottom: 0px;
+    height: 280px;
+    width: 433px;
 }
 
 #badgeText {
@@ -62,16 +62,16 @@
 .mainImage {
     border-radius: 25px;
     height: auto;
-    max-height: 134px;
-    max-width: 134px;
+    max-height: 164px;
+    max-width: 164px;
     width: auto;
 }
 
 #para {
-    font-size: 10px;
+    font-size: 12px;
     margin: 0%;
     width: 180px;
-    max-height: 47px;
+    max-height: 56px;
     padding-top: 2px;
     padding-bottom: 0px;
     text-overflow: ellipsis;
@@ -80,10 +80,12 @@
 
 .pfp {
     border-radius: 75px;
+    height: 24px;
+    width: 24px;
 }
 
 #title {
-    font-size: 28px;
+    font-size: 25px;
 }
 
 .top {
