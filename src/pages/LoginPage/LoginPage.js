@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Button from "react-bootstrap/Button";
 import styles from './Login.module.css';
 
-function LogInPage() {
+function LoginPage() {
     return (
         <div className={styles.container}>
             <div className={styles.page_title}>
