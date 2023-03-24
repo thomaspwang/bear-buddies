@@ -1,5 +1,4 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.css';
 import styles from './Signup.module.css';
 import Button from 'react-bootstrap/Button';
 
