@@ -1,6 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
-import styles from './signup.module.css';
+import styles from './Signup.module.css';
 import Button from 'react-bootstrap/Button';
 
 
@@ -49,7 +49,7 @@ function SignUpPage() {
                             <label>graduation year</label>
                             <select className="form-control">
                                 <option value="" disabled selected hidden className={styles.default_text}>
-                                    <pre>select year&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⌄</pre>
+                                    select year&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⌄
                                 </option>
                                 <option>2026</option>
                                 <option>2025</option>
