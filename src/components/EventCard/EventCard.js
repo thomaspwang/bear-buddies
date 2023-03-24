@@ -1,13 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
+import Image from 'next/image'
+import Button from 'react-bootstrap/Button';
 import Badge from '../../../public/badge';
 import Clock from '../../../public/clock';
 import Location from '../../../public/location';
 import Paragraph from '../../../public/paragraph';
 import Person from '../../../public/person';
 import styles from './EventCard.module.css';
-import { Button } from 'react-bootstrap';
-import React from "react";
-import Image from 'next/image'
+
 
 function OwnerBadge() {
     return (
