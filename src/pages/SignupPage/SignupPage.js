@@ -3,7 +3,7 @@ import styles from './Signup.module.css';
 import Button from 'react-bootstrap/Button';
 
 
-function SignUpPage() {
+function SignupPage() {
     return (
         <div className={styles.container}>
             <div className={styles.signup_title}>
