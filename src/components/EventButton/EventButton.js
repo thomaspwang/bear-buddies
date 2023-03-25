@@ -18,4 +18,3 @@ function EventButton({text}) {
 }
 
 export default EventButton;
-
