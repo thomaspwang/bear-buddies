@@ -1,7 +1,6 @@
 import React from "react";
 import './ProfilePage.module.css';
 import styles from './ProfilePage.module.css'
-import Image from 'next/image';
 
 function ProfilePage() {
     <img className={styles.image} src = 'tommy.png'></img>
