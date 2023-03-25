@@ -1,0 +1,96 @@
+.active {
+    border: #CBCBCB solid 1px;
+    border-radius: 25px;
+    margin: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    height: 280px;
+    width: 433px;
+}
+
+#badgeText {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.body {
+    display: flex;
+    justify-content: end;
+    height: 68%;
+    max-height: 68%;
+    column-gap: 20px;
+    width: 100%;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.button {
+    background-color: #7aa3ff;
+    border-color: #7aa3ff;
+    border-radius: 50px;
+}
+
+#buttonText {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
+    min-width: 50px;
+}
+
+.iconText {
+    align-content: center;
+    column-gap: 7px;
+    display: flex;
+    flex-direction: row;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    row-gap: 10px;
+}
+
+.mainImage {
+    border-radius: 25px;
+    height: auto;
+    max-height: 164px;
+    max-width: 164px;
+    width: auto;
+}
+
+#para {
+    font-size: 12px;
+    margin: 0%;
+    width: 180px;
+    max-height: 56px;
+    padding-top: 2px;
+    padding-bottom: 0px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.pfp {
+    border-radius: 75px;
+    height: 24px;
+    width: 24px;
+}
+
+#title {
+    font-size: 25px;
+}
+
+.top {
+    align-items: baseline;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
