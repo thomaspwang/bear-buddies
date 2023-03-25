@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=DM%20Sans');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap');
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: right;
+    text-align: right;
+}
+.profileL {
+    display: flex;
+    align-items: right;
+    text-align: right;
+    width: 200px;
+    height: 200px;
+    margin-right: 50px;
+    background-color: white;
+}
+.profileR {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+.first {
+    text-align: right;
+    flex-direction: column;
+    margin-top: -370px;
+    margin-right: 460px;
+    font-family: 'DM Sans', sans-serif;
+}
+.fn {
+    text-align: right;
+    flex-direction: column;
+    line-break: auto;
+    margin-left: 120px; 
+    font-family: 'DM Sans';
+}
+.last {
+    text-align: right;
+    flex-direction: column;
+    line-break: auto;
+    margin-top: 25px;
+    margin-right: 473px;
+    font-family: 'DM Sans', sans-serif;
+}
+.ln {
+    text-align: right;
+    flex-direction: column;
+    line-break: auto;
+    margin-left: 123px; 
+    font-family: 'DM Sans';
+}
+.gender {
+    text-align: right;
+    flex-direction: column;
+    margin-top: 25px;
+    margin-right: 478px;
+    font-family: 'DM Sans', sans-serif;
+}
+.gn {
+    text-align: right;
+    flex-direction: column;
+    line-break: auto;
+    margin-left: 149px; 
+    font-family: 'DM Sans';
+}
+.graduation {
+    text-align: right;
+    flex-direction: column;
+    margin-top: 25px;
+    margin-right: 475px;
+    font-family: 'DM Sans', sans-serif;
+}
+.gradn {
+    text-align: right;
+    flex-direction: column;
+    line-break: auto;
+    margin-left: 81px;
+    font-family: 'DM Sans'; 
+}
+.major {
+    text-align: right;
+    flex-direction: column;
+    margin-top: 25px;
+    margin-right: 377px;
+    font-family: 'DM Sans', sans-serif;
+}
+.mn {
+    text-align: right;
+    flex-direction: column;
+    line-break: auto;
+    margin-left: 160px; 
+    font-family: 'DM Sans'; 
+}
+.email {
+    text-align: right;
+    flex-direction: column;
+    margin-top: 25px;
+    margin-right: 311px;
+    font-family: 'DM Sans', sans-serif;
+}
+.en {
+    text-align: right;
+    flex-direction: column;
+    line-break: auto;
+    margin-left: 163px; 
+    font-family: 'DM Sans'; 
+}
+.number {
+    text-align: right;
+    flex-direction: column;
+    margin-top: 25px;
+    margin-right: 405px;
+    font-family: 'DM Sans', sans-serif;
+}
+.nn {
+    text-align: right;
+    flex-direction: column;
+    line-break: auto;
+    margin-left: 90px; 
+        font-family: 'DM Sans';
+}
+.bold {
+    font-weight: bold;
+  }
+
+.imageWrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: white;
+    margin-right: 400px;
+  }
+  
+  .circularImage {
+    width: 450px;
+    height: 450px;
+    background-image: url('/tommy.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 50%;
+    margin-top: 130px;
+    margin-left: 150px;
+  }
+
+  .circularImage img {
+    width: 100%;
+    height: auto;
+  }
