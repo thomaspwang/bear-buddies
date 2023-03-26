@@ -19,8 +19,8 @@ import Form from 'react-bootstrap/Form';
           aria-describedby="image"
         />
 
-        <InputGroup.Text id="image" className={styles.iconEdit}>
-          <Button variant="primary" type="submit" > 
+        <InputGroup.Text id="image" className={styles.buttonBackground}>
+          <Button variant="primary" type="submit" className={styles.button} > 
               <Image src={icon}/> 
           </Button>
         </InputGroup.Text>
