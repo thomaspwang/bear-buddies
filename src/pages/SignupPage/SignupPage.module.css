@@ -44,8 +44,24 @@
     margin-left: 20px;
 }
 
-.default_text option:checked {
-    color: red !important;
+.dropdown_container_output {
+    display: inline-block;
+    width: 80%;
+}
+
+.dropdown_container_button {
+    display: inline-block;
+}
+
+.dropdown_button2 {
+    width: 200px;
+    background-color: #fff;
+    text-align: left;
+    border-bottom: #fff;
+    border-top: #fff;
+    border-left: #fff;
+    border-right: #fff;
+    font-size: 14px;
 }
 
 .long_text_box {
