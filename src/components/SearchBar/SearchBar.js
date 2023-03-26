@@ -1,26 +1,32 @@
 import React, { useState } from 'react'
-import { useRouter } from 'next/router'
 import styles from "./SearchBar.module.css";
 import {Button} from "react-bootstrap";
-import img from "./Vector.svg";
+import icon from "./Vector.svg";
 import Image from 'next/image';
+import InputGroup from 'react-bootstrap/InputGroup';
+import Form from 'react-bootstrap/Form';
+
 
   
   function SearchBar() {
-    const [query, setQuery] = useState('search groups');
-
+  
     return (
-        <form>
-            <div>
-            <InputGroup className={styles.inputArea} >
-                    <Button variant="primary" type="submit" className={styles.searchButton} > 
-                        <Image src={img}/>
-                    </Button>
-            </InputGroup>
-                    <input type="text" value={query} onChange={(event) => setQuery(event.target.value)} />
-                    
-            </div>
-        </form>
+      <InputGroup className={styles.searchButton}>
+
+        <Form.Control
+          placeholder="search groups"
+          aria-label="search groups"
+          aria-describedby="image"
+        />
+
+        <InputGroup.Text id="image" className={styles.iconEdit}>
+          <Button variant="primary" type="submit" > 
+              <Image src={icon}/> 
+          </Button>
+        </InputGroup.Text>
+
+      </InputGroup>
+      
       )
   }
 
