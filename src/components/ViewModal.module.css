@@ -1,0 +1,118 @@
+.parent {
+  background: gray;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.active {
+  border: #CBCBCB solid 1px;
+  border-radius: 25px;
+  width: 50%;
+  height: 62vh;
+  position: absolute;
+  top: 20%;
+  left: 25%;
+}
+
+.bodyLeft {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  max-height: 35vh;
+  width: 50%;
+  top: 43%;
+  left: 5%;
+}
+
+.bodyRight {
+  position: absolute;
+  max-height: 35vh;
+  width: 35%;
+  top: 43%;
+  left: 62%;
+  display: flex;
+  flex-direction: column;
+}
+
+.closeButton {
+  top: 2%;
+  left: 96%;
+  position: absolute;
+}
+
+.iconText {
+  column-gap: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-self: start;
+}
+
+.joinButton {
+  position:absolute;
+  top: 112%;
+  left: 27%;
+  border: #CBCBCB solid 1px;
+  width: 100px;
+  height: 40px;
+  border-radius: 45px;
+  color: white;
+  background-color: #7AA3FF;
+  font-size: 18px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2px;
+  margin-top: 0px;
+  margin-left: -22px;
+}
+
+.listText {
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.pfp {
+    border-radius: 75px;
+    height: 32px;
+    width: 32px;
+}
+
+.mainImage {
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  width: 80%;
+  height: 15vh;
+  object-fit:cover;
+  overflow: hidden;
+}
+
+.memberText {
+  margin: auto;
+}
+
+.normalText {
+    font-size: 15px;
+    padding: 10px;
+    margin: 0;
+}
+
+.people {
+  align-content: center;
+  column-gap: 7px;
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  position: absolute;
+  top: 30%;
+  font-size: 30px;
+  text-align: center;
+  width: 100%;
+}
