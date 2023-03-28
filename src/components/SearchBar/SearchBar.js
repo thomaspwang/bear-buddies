@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from "./SearchBar.module.css";
 import {Button} from "react-bootstrap";
-import icon from "./Vector.svg";
+import icon from "src/public/Vector.svg";
 import Image from 'next/image';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
