@@ -1,0 +1,13 @@
+.navbar_container {
+    display: flex;
+    height: 70px;
+}
+
+.logo_img {
+    width: 60px;
+    height: 65px;
+}
+
+.bar_container {
+    background-color: #fff !important;
+}
