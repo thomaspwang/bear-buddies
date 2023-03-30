@@ -1,10 +1,9 @@
 import React from "react";
-import './ProfilePage.module.css';
 import styles from './ProfilePage.module.css'
-import image from "src/public/tommy.jpeg";
+import Image from "../../../public/tommy.jpeg";
 
 function ProfilePage() {
-    <img className={styles.image} src = 'tommy.jpeg'></img>
+    <img className={styles.image} src = "../../../public/tommy.jpeg"></img>
     return (
         <div className="container">
             <div className={styles.image}>
