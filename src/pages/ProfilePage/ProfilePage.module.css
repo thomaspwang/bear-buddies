@@ -24,7 +24,7 @@
     text-align: right;
     flex-direction: column;
     margin-top: -370px;
-    margin-right: 460px;
+    margin-right: 320px;
     font-family: 'DM Sans', sans-serif;
 }
 .fn {
@@ -39,7 +39,7 @@
     flex-direction: column;
     line-break: auto;
     margin-top: 25px;
-    margin-right: 473px;
+    margin-right: 333px;
     font-family: 'DM Sans', sans-serif;
 }
 .ln {
