@@ -1,15 +1,11 @@
 import React from "react";
-import styles from './ProfilePage.module.css'
-import Image from "../../../public/tommy.jpeg";
-import Image from "/Users/hyeseungsong/Desktop/Plextech/bear-buddies/public/tommy.jpeg";
+import styles from './ProfilePage.module.css';
+import Image from "next/image";
 
 function ProfilePage() {
-    <img className={styles.image} src = "../../../public/tommy.jpeg"></img>
     return (
         <div className="container">
-            <div className={styles.image}>
-                <div className={styles.circularImage} />
-            </div>
+            <Image src="/tommy.jpeg" alt="tommy" width="450" height="450" className={styles.circularImage}/>
             <div className={styles.profileR}>
                 <div className={styles.first}>
                     <span>

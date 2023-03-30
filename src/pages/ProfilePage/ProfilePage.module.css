@@ -134,7 +134,6 @@
   .circularImage {
     width: 450px;
     height: 450px;
-    background-image: url('/tommy.jpeg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
