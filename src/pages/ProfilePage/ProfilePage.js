@@ -1,6 +1,7 @@
 import React from "react";
 import styles from './ProfilePage.module.css'
 import Image from "../../../public/tommy.jpeg";
+import Image from "/Users/hyeseungsong/Desktop/Plextech/bear-buddies/public/tommy.jpeg";
 
 function ProfilePage() {
     <img className={styles.image} src = "../../../public/tommy.jpeg"></img>
