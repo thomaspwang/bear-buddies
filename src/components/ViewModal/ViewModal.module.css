@@ -1,4 +1,4 @@
-.bodyLeft {
+.body_left {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@
   left: 5%;
 }
 
-.bodyRight {
+.body_right {
   position: absolute;
   max-height: 35vh;
   width: 35%;
@@ -18,7 +18,7 @@
   flex-direction: column;
 }
 
-.closeButton {
+.close_button {
   top: 2%;
   left: 96%;
   position: absolute;
@@ -29,7 +29,7 @@
   max-height: 80vh !important;
 }
 
-.iconText {
+.icon_text {
   column-gap: 8px;
   display: flex;
   flex-direction: row;
@@ -37,7 +37,7 @@
   justify-self: start;
 }
 
-.joinButton {
+.join_button {
   position:absolute;
   top: 140%;
   left: 35%;
@@ -58,7 +58,7 @@
   margin-left: 0px;
 }
 
-.listText {
+.list_text {
   font-size: 15px;
   padding: 0;
   margin: 0;
@@ -70,7 +70,7 @@
     width: 32px;
 }
 
-.mainImage {
+.main_image {
   position: absolute;
   top: 5%;
   left: 10%;
@@ -80,11 +80,11 @@
   overflow: hidden;
 }
 
-.memberText {
+.member_text {
   margin: auto;
 }
 
-.normalText {
+.normal_text {
     font-size: 15px;
     padding: 10px;
     margin: 0;
