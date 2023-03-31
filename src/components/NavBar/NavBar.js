@@ -7,22 +7,46 @@ import Navbar from "react-bootstrap/Navbar";
 
 
 function NavBar() {
+
+    const [activePage, setActivePage] = useState(0);
+
+    const changePage = (e, index) => {
+        setActivePage(index);
+    }
+
     return (
         <Navbar className={styles.bar_container} collapseOnSelect expand="lg" bg="light" variant="light">
-            <Container className={styles.navbar_container}>
-                <Navbar.Brand href="#home">
+                <Navbar.Brand href="#home" className={styles.brand_name}>
                     <img src="../../logo.png" alt="" className={styles.logo_img}></img>
                     Bear Buddies
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="#features">Page 1</Nav.Link>
-                        <Nav.Link href="#pricing">Page 2</Nav.Link>
-                        
+                    <Nav className={styles.pages_container}>
+                        <Nav.Link 
+                            href="#features" 
+                            className={`${styles.nav_bar_pages} ${activePage === 0 ? styles.active : ''}`}
+                            onClick={() => changePage(0)}
+                            >
+                            Home
+                        </Nav.Link>
+                        <Nav.Link 
+                            href="#pricing" 
+                            className={`${styles.nav_bar_pages} ${activePage === 1 ? styles.active : ''}`}
+                            onClick={() => changePage(1)}
+                            >
+                            My Groups
+                        </Nav.Link>
+                        <Nav.Link 
+                            href="#features" 
+                            className={`${styles.nav_bar_pages} ${activePage === 2 ? styles.active : ''}`}
+                            onClick={() => changePage(2)}
+                            >
+                            My Profile
+                        </Nav.Link>      
                     </Nav>
                 </Navbar.Collapse>
-            </Container>
+
         </Navbar>
     )
 }
