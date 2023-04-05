@@ -24,7 +24,7 @@ function NavBar() {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className={styles.pages_container}>
                         <Nav.Link 
-                            href="../../pages/" 
+                            href="../../pages/HomePage/HomePage.js" 
                             className={activePage === 0 ? styles.active : styles.nav_bar_pages}
                             onClick={() => changePage(0)}
                             >
@@ -32,7 +32,7 @@ function NavBar() {
                         </Nav.Link>
                         <p className={styles.split_nav_pages}>●</p>
                         <Nav.Link 
-                            href="../../pages/" 
+                            href="../../pages/GroupMangementPage/GroupManagementPage.js" 
                             className={activePage === 1 ? styles.active : styles.nav_bar_pages}
                             onClick={() => changePage(1)}
                             >
@@ -40,7 +40,7 @@ function NavBar() {
                         </Nav.Link>
                         <p className={styles.split_nav_pages}>●</p>
                         <Nav.Link 
-                            href="../../pages/" 
+                            href="../../pages/ProfilePage/ProfilePage.js" 
                             className={activePage === 2 ? styles.active : styles.nav_bar_pages}
                             onClick={() => changePage(2)}
                             >
