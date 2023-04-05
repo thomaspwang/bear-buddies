@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import {useState} from 'react';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
-import NavBar from "@/components/NavBar/NavBar";
+
 
 
 function SignupPage() {
