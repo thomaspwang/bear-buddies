@@ -20,7 +20,6 @@ function SignupPage() {
 
     return (
         <div>
-            <NavBar></NavBar>
             <div className={styles.container}>
                 <div className={styles.signup_title}>
                     <h1>Sign Up for Bear Buddies</h1>

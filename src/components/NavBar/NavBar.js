@@ -10,7 +10,7 @@ function NavBar() {
 
     const [activePage, setActivePage] = useState(0);
 
-    const changePage = (e, index) => {
+    const changePage = (index) => {
         setActivePage(index);
     }
 
@@ -24,22 +24,24 @@ function NavBar() {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className={styles.pages_container}>
                         <Nav.Link 
-                            href="#features" 
-                            className={`${styles.nav_bar_pages} ${activePage === 0 ? styles.active : ''}`}
+                            href="../../pages/" 
+                            className={activePage === 0 ? styles.active : styles.nav_bar_pages}
                             onClick={() => changePage(0)}
                             >
                             Home
                         </Nav.Link>
+                        <p className={styles.split_nav_pages}>●</p>
                         <Nav.Link 
-                            href="#pricing" 
-                            className={`${styles.nav_bar_pages} ${activePage === 1 ? styles.active : ''}`}
+                            href="../../pages/" 
+                            className={activePage === 1 ? styles.active : styles.nav_bar_pages}
                             onClick={() => changePage(1)}
                             >
                             My Groups
                         </Nav.Link>
+                        <p className={styles.split_nav_pages}>●</p>
                         <Nav.Link 
-                            href="#features" 
-                            className={`${styles.nav_bar_pages} ${activePage === 2 ? styles.active : ''}`}
+                            href="../../pages/" 
+                            className={activePage === 2 ? styles.active : styles.nav_bar_pages}
                             onClick={() => changePage(2)}
                             >
                             My Profile
