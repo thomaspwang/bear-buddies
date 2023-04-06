@@ -1,0 +1,18 @@
+.searchButton {
+    height: 32px;
+    background-color: white;
+    border-color: #CBCBCB;
+    width: 900px;
+    border-radius: 2000px;
+}
+
+.buttonBackground {
+    background-color: white;
+    border-color: #CBCBCB;
+    width: 80px;
+}
+
+.button {
+    background-color: white;
+    border-color: white;
+}
