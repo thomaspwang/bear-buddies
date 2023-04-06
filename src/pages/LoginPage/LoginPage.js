@@ -1,7 +1,7 @@
 import React from "react";
 import Form from 'react-bootstrap/Form';
 import Button from "react-bootstrap/Button";
-import styles from './Login.module.css';
+import styles from './LoginPage.module.css';
 
 function LoginPage() {
     return (
@@ -35,4 +35,4 @@ function LoginPage() {
     )
 }
 
-export default LogInPage;
+export default LoginPage;
