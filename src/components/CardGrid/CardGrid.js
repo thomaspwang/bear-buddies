@@ -9,7 +9,7 @@ function CardGrid( {cardData} ) {
             {cardData.map((i) => {
                 return (
                   <Col>
-                    <EventCard title={i.title} image={i.image} author={i.author} authorPic={i.authorPic}></EventCard>
+                    <EventCard title={i.title} image={i.image} author={i.author} authorPic={i.authorPic} maxCap={i.maxCap} currCap={i.currCap} location={i.location} time={i.time} description={i.description} joined={i.joined} owner={i.owner}></EventCard>
                   </Col>
                 )
             })}
