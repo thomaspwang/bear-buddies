@@ -8,6 +8,14 @@
     height: 65px;
 }
 
+.brand_name:hover {
+    color: #7AA3FF;
+}
+
+.nav_bar_pages:hover {
+    color: #7AA3FF !important;
+}
+
 .brand_name {
     font-size: 32px;
     font-weight: bolder;
