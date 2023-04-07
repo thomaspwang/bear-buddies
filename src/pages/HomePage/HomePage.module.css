@@ -1,0 +1,9 @@
+.buttons {
+    align-items: center;
+    padding-left: 35mm;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+
