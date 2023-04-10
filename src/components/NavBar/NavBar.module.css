@@ -1,0 +1,53 @@
+.navbar_container {
+    display: flex;
+    height: 70px;
+}
+
+.logo_img {
+    width: 65px;
+    height: 65px;
+}
+
+.brand_name:hover {
+    color: #7AA3FF;
+}
+
+.nav_bar_pages:hover {
+    color: #7AA3FF !important;
+}
+
+.brand_name {
+    font-size: 32px;
+    font-weight: bolder;
+    color: #7AA3FF;
+}
+
+.active {
+    font-weight: bold !important;
+    color: #7AA3FF !important;
+    text-decoration: underline;
+}
+
+.nav_bar_pages {
+    color: rgb(192, 192, 192) !important;
+}
+
+.split_nav_pages {
+    font-size: 15px;
+    margin-top: 8px;
+    color: rgb(192, 192, 192);
+}
+
+.pages_container {
+    margin-right: 100px;
+    margin-left: auto;
+    font-size: 18px;
+}
+
+
+.bar_container {
+    display: flex;
+    background-color: #fff !important;
+    padding-left: 10px;
+    justify-content: right;
+}
