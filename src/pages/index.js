@@ -1,8 +1,7 @@
-import ProfilePage from "./ProfilePage/ProfilePage";
 export default function Index() {
   return (
     <>
-     <ProfilePage></ProfilePage>
+      <div>bear buddies!</div>
     </>
   )
 }
