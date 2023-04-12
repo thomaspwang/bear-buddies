@@ -16,3 +16,9 @@
     background-color: white;
     border-color: white;
 }
+
+.text {
+    font-size: 28px;
+    font-family: 'Open Sans';
+    color: #A6A6A8;
+}

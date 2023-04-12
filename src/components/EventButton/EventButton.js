@@ -11,7 +11,7 @@ function EventButton({text}) {
         
     return (
         <Button variant="primary" type="submit" className={styles.textEdit}> 
-             <Image src={icon}/> 
+             <Image src={icon} className={styles.image}/> 
              {text}
          </Button>
     )

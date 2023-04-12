@@ -1,11 +1,19 @@
 .textEdit {
     margin-top: 10px;
-    width: 250px;
+    width: 190px;
     border-radius: 50px;
     background-color: #FFFFFF;
     color: #CBCBCB;
     border-color: #CBCBCB;
     border-width: 2px;
-    font-size: 30px;
+    font-size: 27px;
     font-weight: bolder;
+    height: 40px;
+    padding-bottom: 50px;
+    
+}
+
+.image {
+    width: 50px;
+    height: 50px;
 }
