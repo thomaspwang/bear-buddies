@@ -1,0 +1,19 @@
+.buttons {
+    align-items: center;
+    display: flex;
+    justify-items: space-between;
+    margin-bottom: 20px;
+}
+
+.createButton {
+    padding-left: 4.5%;
+    width: 24%;
+}
+
+.searchBar {
+    width: 60%;
+}
+
+.cardGrid {
+    padding-left: 4%;
+}

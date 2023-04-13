@@ -15,6 +15,7 @@ function SearchBar() {
         placeholder="search groups"
         aria-label="search groups"
         aria-describedby="image"
+        className={styles.text}
       />
 
       <InputGroup.Text id="image" className={styles.buttonBackground}>
