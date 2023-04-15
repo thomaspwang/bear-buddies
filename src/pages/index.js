@@ -1,7 +1,9 @@
+import HomePage from './HomePage/HomePage'
+
 export default function Index() {
   return (
     <>
-      <div>bear buddies!</div>
+      <HomePage/>
     </>
   )
 }

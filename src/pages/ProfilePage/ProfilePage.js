@@ -1,10 +1,13 @@
 import React from "react";
 import styles from './ProfilePage.module.css';
 import Image from "next/image";
+import NavBar from "@/components/NavBar/NavBar";
 
 function ProfilePage() {
     return (
-        <div className="container">
+        <div>
+            <NavBar> </NavBar>
+            <div className="container">
             <Image src="/tommy.jpeg" alt="tommy" width="450" height="450" className={styles.circularImage}/>
             <div className={styles.profileR}>
                 <div className={styles.first}>
@@ -50,6 +53,7 @@ function ProfilePage() {
                     <span className={styles.nn}> (510) 701-3797</span>
                 </div>
             </div>
+        </div>
         </div>
     )
 }
