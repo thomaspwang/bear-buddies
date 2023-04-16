@@ -56,3 +56,8 @@ To insert data (barebones, might change over time):
 ![image](https://user-images.githubusercontent.com/82493352/232259892-04874c95-6189-438e-8061-b754428b317d.png)
 
 ![image](https://user-images.githubusercontent.com/82493352/232259907-5854815e-f3e8-4423-8f1d-cb2427b16515.png)
+
+To view data
+
+![image](https://user-images.githubusercontent.com/82493352/232259993-750ebb95-a188-4ccb-9698-0238704ad5d1.png)
+
