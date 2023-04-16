@@ -22,3 +22,35 @@ To activate the Python virtual environment in the bear-buddies/backend folder, n
 
 You should see a (venv) to the left of your terminal.
 
+To install dependencies from requirements.txt, navigate to the bear-buddies/backend and run:
+
+```bash
+pip install
+```
+
+To run the API server locally, navigate to the bear-buddies/backend folder and run: 
+
+```bash
+python app.py
+```
+
+or 
+
+```bash
+python3 app.py
+```
+
+## Adding dependencies
+
+If you want to add any dependncies / libraries / tools, follow these steps:
+1. Ask the chat and have it approved
+2. run `pip install <dependency>`
+3. run `pip freeze > requirements.txt`
+
+## Testing
+
+To insert data (barebones, might change over time):
+
+![image](https://user-images.githubusercontent.com/82493352/232259892-04874c95-6189-438e-8061-b754428b317d.png)
+
+![image](https://user-images.githubusercontent.com/82493352/232259907-5854815e-f3e8-4423-8f1d-cb2427b16515.png)
