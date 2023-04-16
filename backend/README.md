@@ -25,7 +25,7 @@ You should see a (venv) to the left of your terminal.
 To install dependencies from requirements.txt, navigate to the bear-buddies/backend and run:
 
 ```bash
-pip install
+pip install -r requirements.txt
 ```
 
 ## Running the server
