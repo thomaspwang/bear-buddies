@@ -28,6 +28,8 @@ To install dependencies from requirements.txt, navigate to the bear-buddies/back
 pip install
 ```
 
+## Running the server
+
 To run the API server locally, navigate to the bear-buddies/backend folder and run: 
 
 ```bash
