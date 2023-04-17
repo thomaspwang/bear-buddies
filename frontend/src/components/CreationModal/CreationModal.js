@@ -75,7 +75,7 @@ function CreationModal({ show, onClose}) {
                                     <Dropdown.Item eventKey="other">Games</Dropdown.Item>
                                     <Dropdown.Item eventKey="female">Drinks</Dropdown.Item>
                                     <Dropdown.Item eventKey="male">Virtual</Dropdown.Item>
-                                    <Dropdown.Item eventKey="other">Sports</Dropdown.Item>
+                                    <Dropdown.Item eventKey="other">sports</Dropdown.Item>
                                 </DropdownButton>
                             </div>
                         </div>
@@ -104,7 +104,7 @@ function CreationModal({ show, onClose}) {
                     </div>
                     <label>Description</label>
                     <div className={styles.expanding_box}>
-                        <span className={styles.span} contenteditable="true"></span>
+                        <span className={styles.span} contentEditable="true"></span>
                     </div>
                     <label>Upload Image</label>
                     <div>
