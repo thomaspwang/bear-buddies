@@ -108,7 +108,7 @@ function CreationModal({ show, onClose}) {
                     </div>
                     <label>Upload Image</label>
                     <div>
-                      <input type="file" id="myFile" name="filename"/>
+                      <input className={styles.upload_button} type="file" id="myFile" name="filename"/>
                     </div>
                     <div>
                         <Button type="submit" className={styles.create_button}> Create Group</Button>
