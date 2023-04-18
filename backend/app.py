@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import datetime as datetime
+import certifi
 
 from models import db
 from models.user import User
@@ -18,7 +19,8 @@ cors = CORS(app, resource={
     }
 })
 
-app.config["MONGODB_HOST"] = "mongodb+srv://username:Password1234@cluster0.z5glouc.mongodb.net/?retryWrites=true&w=majority"
+app.config["MONGODB_HOST"] = "mongodb+srv://username:Password1234@cluster0.z5glouc.mongodb.net/ssl_cert_reqs=CERT_NONE?retryWrites=true&w=majority"
+
 
 db.init_app(app)
 
@@ -45,6 +47,13 @@ def create_event():
         owner = request.json['owner'],
     ).save()
     return jsonify(new_event)
+
+@app.route('/delete-event', methods = ['DELETE'])
+def delete_event():
+    idNum = request.json['_id']['$oid']
+    deletedEvent = Event.objects.get(id=idNum)
+    deletedEvent.delete()
+    return jsonify(deletedEvent)
 
 if __name__ == "__main__":
     app.run(debug=True)
