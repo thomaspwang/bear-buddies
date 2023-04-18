@@ -75,7 +75,7 @@ function CreationModal({ show, onClose}) {
                                     <Dropdown.Item eventKey="other">Games</Dropdown.Item>
                                     <Dropdown.Item eventKey="female">Drinks</Dropdown.Item>
                                     <Dropdown.Item eventKey="male">Virtual</Dropdown.Item>
-                                    <Dropdown.Item eventKey="other">sports</Dropdown.Item>
+                                    <Dropdown.Item eventKey="other">Sports</Dropdown.Item>
                                 </DropdownButton>
                             </div>
                         </div>
