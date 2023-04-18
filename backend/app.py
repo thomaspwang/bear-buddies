@@ -55,5 +55,12 @@ def delete_event():
     deletedEvent.delete()
     return jsonify(deletedEvent)
 
+@app.route('/delete-user', methods = ['DELETE'])
+def delete_user():
+    idNum = request.json['_id']['$oid']
+    deletedUser = User.objects.get(id=idNum)
+    deletedUser.delete()
+    return jsonify(deletedUser)
+
 if __name__ == "__main__":
     app.run(debug=True)
