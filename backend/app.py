@@ -90,6 +90,12 @@ def update_user():
     changedEvent.update(**changes)
     return jsonify(changedEvent)
 
+@app.route('/get-all-events', methods = ['GET'])
+def get_all_events():
+    doc = Event.objects()
+    return jsonify(doc)
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
