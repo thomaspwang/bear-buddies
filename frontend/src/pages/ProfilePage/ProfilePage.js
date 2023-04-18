@@ -6,7 +6,7 @@ import NavBar from "@/components/NavBar/NavBar";
 function ProfilePage() {
     return (
         <div>
-            <NavBar> </NavBar>
+            <NavBar page={2}> </NavBar>
             <div className="container">
             <Image src="/tommy.jpeg" alt="tommy" width="450" height="450" className={styles.circularImage}/>
             <div className={styles.profileR}>

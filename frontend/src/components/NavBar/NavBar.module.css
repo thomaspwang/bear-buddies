@@ -23,9 +23,9 @@
 }
 
 .active {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold !important;
     color: #7AA3FF !important;
-    text-decoration: underline;
 }
 
 .nav_bar_pages {

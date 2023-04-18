@@ -6,13 +6,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
 
-function NavBar() {
-
-    const [activePage, setActivePage] = useState(0);
-
-    const changePage = (index) => {
-        setActivePage(index);
-    }
+function NavBar({page}) {
 
     return (
         <Navbar className={styles.bar_container} collapseOnSelect expand="lg" bg="light" variant="light">
@@ -25,24 +19,21 @@ function NavBar() {
                     <Nav className={styles.pages_container}>
                         <Nav.Link 
                             href="../../HomePage/HomePage" 
-                            className={activePage === 0 ? styles.active : styles.nav_bar_pages}
-                            onClick={() => changePage(0)}
+                            className={page === 0 ? styles.active : styles.nav_bar_pages}
                             >
                             Home
                         </Nav.Link>
                         <p className={styles.split_nav_pages}>●</p>
                         <Nav.Link 
                             href="../../GroupManagementPage/GroupManagementPage" 
-                            className={activePage === 1 ? styles.active : styles.nav_bar_pages}
-                            onClick={() => changePage(1)}
+                            className={page === 1 ? styles.active : styles.nav_bar_pages}
                             >
                             My Groups
                         </Nav.Link>
                         <p className={styles.split_nav_pages}>●</p>
                         <Nav.Link 
                             href="../../ProfilePage/ProfilePage" 
-                            className={activePage === 2 ? styles.active : styles.nav_bar_pages}
-                            onClick={() => changePage(2)}
+                            className={page === 2 ? styles.active : styles.nav_bar_pages}
                             >
                             My Profile
                         </Nav.Link>      
