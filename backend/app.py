@@ -19,7 +19,7 @@ cors = CORS(app, resource={
     }
 })
 
-app.config["MONGODB_HOST"] = "mongodb+srv://username:Password1234@cluster0.z5glouc.mongodb.net/ssl_cert_reqs=CERT_NONE?retryWrites=true&w=majority"
+app.config["MONGODB_HOST"] = "mongodb+srv://username:Password1234@cluster0.z5glouc.mongodb.net/?retryWrites=true&w=majority"
 
 
 db.init_app(app)
@@ -73,6 +73,22 @@ def get_event():
     idNum = request.json['_id']['$oid']
     returnedEvent = Event.objects.get(id=idNum)
     return jsonify(returnedEvent)
+
+@app.route('/update-event', methods = ['PUT'])
+def update_event():
+    changes = request.get_json()
+    idNum = changes['id']
+    changedEvent = Event.objects.get(id=idNum)
+    changedEvent.update(**changes)
+    return jsonify(changedEvent)
+
+@app.route('/update-user', methods = ['PUT'])
+def update_user():
+    changes = request.get_json()
+    idNum = changes['id']
+    changedEvent = User.objects.get(id=idNum)
+    changedEvent.update(**changes)
+    return jsonify(changedEvent)
 
 
 if __name__ == "__main__":
