@@ -50,27 +50,27 @@ def create_event():
 
 @app.route('/delete-event', methods = ['DELETE'])
 def delete_event():
-    idNum = request.json['_id']['$oid']
+    idNum = request.json['id']
     deletedEvent = Event.objects.get(id=idNum)
     deletedEvent.delete()
     return jsonify(deletedEvent)
 
 @app.route('/delete-user', methods = ['DELETE'])
 def delete_user():
-    idNum = request.json['_id']['$oid']
+    idNum = request.json['id']
     deletedUser = User.objects.get(id=idNum)
     deletedUser.delete()
     return jsonify(deletedUser)
 
 @app.route('/get-user', methods = ['GET'])
 def get_user():
-    idNum = request.json['_id']['$oid']
+    idNum = request.json['id']
     returnedUser = User.objects.get(id=idNum)
     return jsonify(returnedUser)
 
 @app.route('/get-event', methods = ['GET'])
 def get_event():
-    idNum = request.json['_id']['$oid']
+    idNum = request.json['id']
     returnedEvent = Event.objects.get(id=idNum)
     return jsonify(returnedEvent)
 
