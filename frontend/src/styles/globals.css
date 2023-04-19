@@ -2,7 +2,7 @@
 
 a {
     color: #000000;
-    font-family: 'DM Sans';
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -11,24 +11,24 @@ body {
 
 .head {
     color: #000000;
-    font-family: 'DM Sans';
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
 }
 
 p {
     color: #000000;
-    font-family: 'DM Sans';
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .primary {
     color: #7aa3ff;
-    font-family: 'DM Sans';
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
 }
 
 .secondary {
     color: #CBCBCB;
-    font-family: 'DM Sans';
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: normal;
     height: auto;
 }
