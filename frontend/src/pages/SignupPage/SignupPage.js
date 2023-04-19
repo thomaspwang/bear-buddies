@@ -4,10 +4,81 @@ import Button from 'react-bootstrap/Button';
 import {useState} from 'react';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
+import { useAtom } from "jotai";
 
 
 
 function SignupPage() {
+
+    const [signupState, setSignupState] = useAtom(signupAtom);
+
+    const [signupData, setSignupData] = useState({
+        email: '',
+        password: '',
+        confirmPassword: '',
+        firstName: '',
+        lastName: '',
+        gender: '',
+        phoneNumber: '',
+        graduationYear: '',
+    });
+
+    const handleSignUp = async (e) => {
+        e.preventDefault();
+        if (signupData.password !== signupData.confirmPassword) {
+            setSignupState({
+                status: 'error',
+                error: "passwords don't match",
+                user: null
+            });
+            return;
+        }
+
+        setSignupState({
+            state: 'loading',
+            error: null,
+            user: null
+        })
+
+        const reponse = await fetch("http://127.0.0.1:5000/signup", {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(signupData);
+        });
+
+        const data = await response.json();
+
+        if (reponse.ok) {
+            setSignupData({status: 'success', error: null, user: data});
+            // redirect to home page
+            window.location.href = '../HomePage/HomePage';
+        } else {
+            setSignupState({status: 'error', error: data.error, user:null});
+        }
+
+    }
+
+    
+
+
+    const [loginStatus, setLoginStatus] = useAtom(loggedInAtom);
+    const changeStatus = () => setLoginStatus(!loginStatus);
+
+    const [path, setPath] = useState("../LoginPage/LoginPage");
+
+    const checkLoginStatus = async () => {
+        const response = await fetch("http://127.0.0.1:5000/signup")
+        .then((data) => data.json())
+        //checks where to send the user --> either the login or keep them in the signup
+        if (!response.ok) {
+            setPath("/");
+        } else {
+            changeStatus();
+        }
+    }
+
+    //------------------------------------------------
+
     const [year, setYear] = useState("select year ");
     const handleSelectYear = (y) => {
         setYear(y);
@@ -107,7 +178,7 @@ function SignupPage() {
                             </div>
                         </div>
                         <div className="signup-btn-cont">
-                            <Button variant="primary" type="submit" className={styles.btn}>Sign Up</Button>
+                            <Button variant="primary" type="submit" className={styles.btn} href={path}>Sign Up</Button>
                         </div> 
                     </form>
                 </div>
