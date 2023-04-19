@@ -46,5 +46,28 @@ def create_event():
     ).save()
     return jsonify(new_event)
 
+
+@app.route('/signup', methods = ['POST'])
+def signup():
+    data =request.get_json()
+    given_email = data.get('email')
+    #check if the email already exists in database
+    if User.objects(email=given_email).first():
+        return jsonify({'error': 'this email already has an account associated with it, please login'})
+
+    
+    new_user = User(
+        email = data['email'],
+        password = data['password'],
+        first_name = data['first_name'],
+        last_name = data['last_name'],
+        gender = data['gender'],
+        phone_number = data['phone_number'],
+        graduation_year = data['graduation_year'],
+    ).save()
+    
+    return jsonify({'success': 'user created successfully'})
+
+
 if __name__ == "__main__":
     app.run(debug=True)
