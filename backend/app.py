@@ -64,6 +64,7 @@ def signup():
         gender = data['gender'],
         phone_number = data['phone_number'],
         graduation_year = data['graduation_year'],
+        major = data['major']
     ).save()
     
     return jsonify({'success': 'user created successfully'})

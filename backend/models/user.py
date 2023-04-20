@@ -8,5 +8,6 @@ class User(db.Document):
     gender = db.StringField(required=True)
     phone_number = db.StringField(required=True)
     graduation_year = db.IntField(required=True)
+    major = db.StringField(required=True)
     groups_owned = db.ListField(db.ReferenceField('Event'))
     groups_participating = db.ListField(db.ReferenceField('Event'))
