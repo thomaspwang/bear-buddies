@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import datetime as datetime
-import certifi
 
 from models import db
 from models.user import User
