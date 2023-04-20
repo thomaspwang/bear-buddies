@@ -25,7 +25,7 @@ function SignupPage() {
                     <h1>Sign Up for Bear Buddies</h1>
                 </div>
                 <div>
-                    <h4>Create a free account or <a className={styles.blue_txt} href="../Login/login" style={{textDecoration: 'none', font: 'inherit'}}>login</a></h4>
+                    <h4>Create a free account or <a className={styles.blue_txt} href="../LoginPage/LoginPage" style={{textDecoration: 'none', font: 'inherit'}}>login</a></h4>
                 </div>
                 <div className={styles.data_container}>
                     <form>

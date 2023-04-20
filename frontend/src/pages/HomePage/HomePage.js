@@ -10,7 +10,7 @@ import NavBar from "@/components/NavBar/NavBar";
 function HomePage() {
     return (
         <div> 
-                <NavBar> </NavBar>
+                <NavBar page={0}> </NavBar>
                 <div className={styles.buttons}> 
                     <div className= {styles.createButton} > 
                          <EventButton text="Create" > </EventButton>

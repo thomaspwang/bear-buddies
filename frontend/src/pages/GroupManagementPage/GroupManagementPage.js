@@ -21,7 +21,7 @@ function GroupManagementPage() {
 
     return (
         <>
-            <NavBar />
+            <NavBar page={1}/>
             <div className={styles.container}>
                 <EventButton text={"Create"}/>
             </div>
