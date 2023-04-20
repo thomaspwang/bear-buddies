@@ -27,7 +27,7 @@ function LoginPage() {
             <div className={styles.line}></div>
             <div className={styles.not_member_container}>
                 <h5 className={styles.col_item_member}>not a member?</h5>
-                <Button variant="primary" type="submit" className={styles.col_item_member_btn} href="../Signup/signup">
+                <Button variant="primary" type="submit" className={styles.col_item_member_btn} href="../SignupPage/SignupPage">
                     join the community!
                 </Button>
             </div>

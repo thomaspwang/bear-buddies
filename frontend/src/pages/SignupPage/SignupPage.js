@@ -4,76 +4,51 @@ import Button from 'react-bootstrap/Button';
 import {useState} from 'react';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
-import { useAtom } from "jotai";
-
+import { useAtom, atom} from "jotai";
+import {currUser} from '../../atoms.js';
 
 
 function SignupPage() {
 
-    const [signupState, setSignupState] = useAtom(signupAtom);
+    const [user, setUser] = useAtom(currUser);
 
-    const [signupData, setSignupData] = useState({
-        email: '',
-        password: '',
-        confirmPassword: '',
-        firstName: '',
-        lastName: '',
-        gender: '',
-        phoneNumber: '',
-        graduationYear: '',
-    });
+    const [path, setPath] = useState("/HomePage/HomePage");
 
-    const handleSignUp = async (e) => {
+    const changeStatus = () => setUser({});
+
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [genderi, setGenderi] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [graduationYear, setGraduationYear] = useState('');
+    const [major, setMajor] = useState('');
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if (signupData.password !== signupData.confirmPassword) {
-            setSignupState({
-                status: 'error',
-                error: "passwords don't match",
-                user: null
+        try {
+            const response = await fetch('http://127.0.0.1:5000/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email,
+                    password,
+                    first_name: firstName,
+                    last_name: lastName,
+                    genderi,
+                    phone_number: phoneNumber,
+                    graduation_year: graduationYear,
+                    major
+                }),
             });
-            return;
-        }
-
-        setSignupState({
-            state: 'loading',
-            error: null,
-            user: null
-        })
-
-        const reponse = await fetch("http://127.0.0.1:5000/signup", {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(signupData);
-        });
-
-        const data = await response.json();
-
-        if (reponse.ok) {
-            setSignupData({status: 'success', error: null, user: data});
-            // redirect to home page
-            window.location.href = '../HomePage/HomePage';
-        } else {
-            setSignupState({status: 'error', error: data.error, user:null});
-        }
-
-    }
-
-    
-
-
-    const [loginStatus, setLoginStatus] = useAtom(loggedInAtom);
-    const changeStatus = () => setLoginStatus(!loginStatus);
-
-    const [path, setPath] = useState("../LoginPage/LoginPage");
-
-    const checkLoginStatus = async () => {
-        const response = await fetch("http://127.0.0.1:5000/signup")
-        .then((data) => data.json())
-        //checks where to send the user --> either the login or keep them in the signup
-        if (!response.ok) {
-            setPath("/");
-        } else {
-            changeStatus();
+            const data = await response.json();
+            console.log(data);
+        } catch (error) {
+            console.log(error.response);
         }
     }
 
@@ -96,23 +71,23 @@ function SignupPage() {
                     <h1>Sign Up for Bear Buddies</h1>
                 </div>
                 <div>
-                    <h4>Create a free account or <a className={styles.blue_txt} href="../Login/login" style={{textDecoration: 'none', font: 'inherit'}}>login</a></h4>
+                    <h4>Create a free account or <a className={styles.blue_txt} href="../LoginPage/LoginPage" style={{textDecoration: 'none', font: 'inherit'}}>login</a></h4>
                 </div>
                 <div className={styles.data_container}>
                     <form>
                         <div className={styles.col_cont}>
                             <div className={styles.col_items}>
                                 <label>first name</label>
-                                <input type="text" className="form-control"></input>
+                                <input type="text" name="first_name" value={firstName} onChange={(e) => setFirstName(e.target.value)} className="form-control" required></input>
                             </div>
                             <div className={styles.col_items}>
                                 <label>last name</label>
-                                <input type="text" className="form-control"></input>
+                                <input type="text" name="last_name" value={lastName} onChange={(e) => setLastName(e.target.value)} className="form-control" required></input>
                             </div>
                         </div>
                         <div className={styles.long_text_box}>
                             <label>email</label>
-                            <input type="text" className="form-control"></input>
+                            <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" required></input>
                         </div>
                         <div className={styles.col_cont}>
                             <div className={styles.col_items}>
@@ -126,8 +101,12 @@ function SignupPage() {
                                         id="dropdown-menu-align-right"
                                         size="sm"
                                         flip="true"
+                                        required
                                         bsPrefix={styles.dropdown_button2}
                                         onSelect={handleSelectGender}
+                                        name="genderi"
+                                        value={genderi}
+                                        onChange={(e) => setGenderi(e.target.value)}
                                     >
                                         <Dropdown.Item eventKey="female">female</Dropdown.Item>
                                         <Dropdown.Item eventKey="male">male</Dropdown.Item>
@@ -137,7 +116,7 @@ function SignupPage() {
                             </div>
                             <div className={styles.col_items}>
                                 <label>major</label>
-                                <input type="text" className="form-control"></input>
+                                <input type="text" name="major" value={major} onChange={(e) => setMajor(e.target.value)} className="form-control" required></input>
                             </div>
                         </div>
                         <div className={styles.col_cont}>
@@ -154,6 +133,10 @@ function SignupPage() {
                                         flip="true"
                                         bsPrefix={styles.dropdown_button2}
                                         onSelect={handleSelectYear}
+                                        required 
+                                        name="graduation_year"
+                                        value={graduationYear}
+                                        onChange={(e) => setGraduationYear(e.target.value)}
                                     >
                                         <Dropdown.Item eventKey="2026">2026</Dropdown.Item>
                                         <Dropdown.Item eventKey="2025">2025</Dropdown.Item>
@@ -164,21 +147,24 @@ function SignupPage() {
                             </div>
                             <div className={styles.col_items}>
                                 <label>phone number</label>
-                                <input type="text" className="form-control"></input>
+                                <input type="text" name="phone_number" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} className="form-control" required></input>
                             </div>
                         </div>
                         <div className={styles.col_cont}>
                             <div className={styles.col_items}>
                                 <label>password</label>
-                                <input type="text" className="form-control"></input>
+                                <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-control" required></input>
                             </div>
                             <div className={styles.col_items}>
                                 <label>confirm password</label>
-                                <input type="text" className="form-control"></input>
+                                <input type="password" className="form-control" required></input>
                             </div>
                         </div>
                         <div className="signup-btn-cont">
-                            <Button variant="primary" type="submit" className={styles.btn} href={path}>Sign Up</Button>
+                            <Button 
+                                variant="primary" type="submit" className={styles.btn} href={path} onClick={handleSubmit}>
+                            Sign Up
+                            </Button>
                         </div> 
                     </form>
                 </div>
