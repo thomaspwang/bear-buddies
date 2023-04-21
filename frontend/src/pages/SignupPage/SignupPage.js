@@ -12,22 +12,41 @@ function SignupPage() {
 
     const [user, setUser] = useAtom(currUser);
 
-    const [path, setPath] = useState("/HomePage/HomePage");
-
-    const changeStatus = () => setUser({});
-
+    const [path, setPath] = useState('/SignupPage/SignupPage');
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
-    const [genderi, setGenderi] = useState('');
+    const [gender, setGender] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
-    const [graduationYear, setGraduationYear] = useState('');
+    const [graduationYear, setGraduationYear] = useState(0);
     const [major, setMajor] = useState('');
+    
+    const [error, setError] = useState(null);
+    const [inputs, setInputs] = useState([email, password, confirmPassword, firstName, lastName, gender, phoneNumber, graduationYear, major]);
 
     const handleSubmit = async (e) => {
+        setInputs([email, password, confirmPassword, firstName, lastName, gender, phoneNumber, graduationYear, major]);
         e.preventDefault();
+        setError(null);
+        const emptyFields = inputs.some(input => !input);
+
+        if (confirmPassword != password) {
+            setError("Make sure passwords match");
+            return;
+        }
+
+        if (emptyFields) {
+            console.log(inputs);
+            // If any fields are empty, set an error message
+            setError("Please fill in all fields");
+            console.log("not null");
+            console.log(inputs);
+            return;
+        }
+
         try {
             const response = await fetch('http://127.0.0.1:5000/signup', {
                 method: 'POST',
@@ -39,7 +58,7 @@ function SignupPage() {
                     password,
                     first_name: firstName,
                     last_name: lastName,
-                    genderi,
+                    gender,
                     phone_number: phoneNumber,
                     graduation_year: graduationYear,
                     major
@@ -47,6 +66,10 @@ function SignupPage() {
             });
             const data = await response.json();
             console.log(data);
+            setUser(data);
+            //also need to check if the email is valid
+            //is there a way to check if data['success'] exits, if yes, then redirect to home
+            setPath('/HomePage/HomePage');
         } catch (error) {
             console.log(error.response);
         }
@@ -59,13 +82,16 @@ function SignupPage() {
         setYear(y);
     }
 
-    const [gender, setGender] = useState("select gender ");
+    const [chooseGender, setChooseGender] = useState("select gender ");
     const handleSelectGender = (g) => {
-        setGender(g);
+        setChooseGender(g);
     }
 
     return (
         <div>
+            <div className={error !== null ? styles.error: styles.noError}>
+                {error}
+            </div>
             <div className={styles.container}>
                 <div className={styles.signup_title}>
                     <h1>Sign Up for Bear Buddies</h1>
@@ -97,16 +123,15 @@ function SignupPage() {
                                         className={styles.dropdown_container_button}
                                         menuVariant="dark"
                                         variant=""
-                                        title={gender}
+                                        title={chooseGender}
                                         id="dropdown-menu-align-right"
                                         size="sm"
-                                        flip="true"
                                         required
                                         bsPrefix={styles.dropdown_button2}
                                         onSelect={handleSelectGender}
-                                        name="genderi"
-                                        value={genderi}
-                                        onChange={(e) => setGenderi(e.target.value)}
+                                        name="gender"
+                                        value={gender}
+                                        onChange={(e) => setGender(e.target.value)}
                                     >
                                         <Dropdown.Item eventKey="female">female</Dropdown.Item>
                                         <Dropdown.Item eventKey="male">male</Dropdown.Item>
@@ -116,7 +141,7 @@ function SignupPage() {
                             </div>
                             <div className={styles.col_items}>
                                 <label>major</label>
-                                <input type="text" name="major" value={major} onChange={(e) => setMajor(e.target.value)} className="form-control" required></input>
+                                <input type="text" name="major" value={major} onChange={(e) => setMajor(e.target.value)} className="form-control" requiredTxt = "hello" required></input>
                             </div>
                         </div>
                         <div className={styles.col_cont}>
@@ -127,21 +152,19 @@ function SignupPage() {
                                         className={styles.dropdown_container_button}
                                         menuVariant="dark"
                                         variant=""
+                                        value={year}
                                         title={year}
-                                        id="dropdown-menu-align-right"
+                                        id="graduation_year"
                                         size="sm"
-                                        flip="true"
                                         bsPrefix={styles.dropdown_button2}
                                         onSelect={handleSelectYear}
-                                        required 
+                                        required
                                         name="graduation_year"
-                                        value={graduationYear}
-                                        onChange={(e) => setGraduationYear(e.target.value)}
                                     >
-                                        <Dropdown.Item eventKey="2026">2026</Dropdown.Item>
-                                        <Dropdown.Item eventKey="2025">2025</Dropdown.Item>
-                                        <Dropdown.Item eventKey="2024">2024</Dropdown.Item>
-                                        <Dropdown.Item eventKey="2023">2023</Dropdown.Item>
+                                        <Dropdown.Item eventKey="2026" onChange={((e) => setGraduationYear(e.target.value))}>2026</Dropdown.Item>
+                                        <Dropdown.Item eventKey="2025" onChange={((e) => setGraduationYear(e.target.value))}>2025</Dropdown.Item>
+                                        <Dropdown.Item eventKey="2024" onChange={((e) => setGraduationYear(e.target.value))}>2024</Dropdown.Item>
+                                        <Dropdown.Item eventKey="2023" onChange={((e) => setGraduationYear(e.target.value))}>2023</Dropdown.Item>
                                     </DropdownButton>
                                 </div>
                             </div>
@@ -157,7 +180,7 @@ function SignupPage() {
                             </div>
                             <div className={styles.col_items}>
                                 <label>confirm password</label>
-                                <input type="password" className="form-control" required></input>
+                                <input type="password" className="form-control" name="confirm_password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required></input>
                             </div>
                         </div>
                         <div className="signup-btn-cont">
