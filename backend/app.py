@@ -53,7 +53,7 @@ def signup():
     given_email = data.get('email')
     #check if the email already exists in database
     if User.objects(email=given_email).first():
-        return jsonify({'error': 'this email already has an account associated with it, please login'})
+        return jsonify({'error': 'this email already has an account associated with it, please login'}), 400
 
     new_user = User(
         email = data['email'],
