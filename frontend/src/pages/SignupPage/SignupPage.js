@@ -6,13 +6,18 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useAtom, atom} from "jotai";
 import {currUser} from '../../atoms.js';
+import ErrorBar from '@/components/ErrorBar/ErrorBar';
+import {useRouter} from 'next/router'
+// import {Navigate, useNavigate} from 'react-router-dom';
 
 
 function SignupPage() {
 
     const [user, setUser] = useAtom(currUser);
 
-    const [path, setPath] = useState('/SignupPage/SignupPage');
+    const [requestSuccessful, setRequestSuccessful] = useState(false);
+
+    const [path, setPath] = useState();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -25,73 +30,115 @@ function SignupPage() {
     const [major, setMajor] = useState('');
     
     const [error, setError] = useState(null);
-    const [inputs, setInputs] = useState([email, password, confirmPassword, firstName, lastName, gender, phoneNumber, graduationYear, major]);
+
+    const router = useRouter();
 
     const handleSubmit = async (e) => {
-        setInputs([email, password, confirmPassword, firstName, lastName, gender, phoneNumber, graduationYear, major]);
-        e.preventDefault();
+        e.preventDefault(); 
+        console.log(firstName)
         setError(null);
-        const emptyFields = inputs.some(input => !input);
+        //const emptyFields = inputs.some(input => !input);
+        const emptyFields = firstName == '' || lastName == '' || email == '' 
+            || password == '' || confirmPassword == '' || gender == '' 
+            || graduationYear == '' || major == '';
+
 
         if (confirmPassword != password) {
             setError("Make sure passwords match");
+            e.preventDefault();
             return;
         }
 
         if (emptyFields) {
-            console.log(inputs);
             // If any fields are empty, set an error message
             setError("Please fill in all fields");
             console.log("not null");
-            console.log(inputs);
+            e.preventDefault();
             return;
         }
 
-        try {
-            const response = await fetch('http://127.0.0.1:5000/signup', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email,
-                    password,
-                    first_name: firstName,
-                    last_name: lastName,
-                    gender,
-                    phone_number: phoneNumber,
-                    graduation_year: graduationYear,
-                    major
-                }),
-            });
-            const data = await response.json();
-            console.log(data);
-            setUser(data);
-            //also need to check if the email is valid
-            //is there a way to check if data['success'] exits, if yes, then redirect to home
-            setPath('/HomePage/HomePage');
-        } catch (error) {
-            console.log(error.response);
-        }
+        fetch('http://127.0.0.1:5000/signup', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email,
+                password,
+                first_name: firstName,
+                last_name: lastName,
+                gender,
+                phone_number: phoneNumber,
+                graduation_year: graduationYear,
+                major
+            })
+        }).then((response) => {
+            if (response.ok) {
+                console.log("success");
+                router.push('/LoginPage/LoginPage')
+                return response.json()
+            } else {
+                throw new Error("<insert error mssage>")
+            }
+        }).then((responseJson) => {
+            // do something
+        }).catch((error) => {
+            console.log(error)
+        })
     }
+
+        // try {
+        //     const response = await fetch('http://127.0.0.1:5000/signup', {
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type': 'application/json',
+        //         },
+        //         body: JSON.stringify({
+        //             email,
+        //             password,
+        //             first_name: firstName,
+        //             last_name: lastName,
+        //             gender,
+        //             phone_number: phoneNumber,
+        //             graduation_year: graduationYear,
+        //             major
+        //         }),
+        //     });
+        //     if (response.ok) {
+        //         //setPath("../LoginPage/LoginPage");
+        //         console.log(response.json())
+        //         //navigate('/LoginPage/Log`inPage');
+        //     } else {
+        //         setError('This email is already registered');
+        //         e.preventDefault();
+        //     }
+        //     const data = await response.json();
+        //     console.log(data);
+        //     setUser(data);
+        //     //also need to check if the email is valid
+        //     //is there a way to check if data['success'] exits, if yes, then redirect to home
+        //     console.log(path);
+        // } catch (error) {
+        //     console.log(error.response);
+        // }
 
     //------------------------------------------------
 
     const [year, setYear] = useState("select year ");
     const handleSelectYear = (y) => {
         setYear(y);
+        setGraduationYear(y);
     }
 
     const [chooseGender, setChooseGender] = useState("select gender ");
     const handleSelectGender = (g) => {
         setChooseGender(g);
+        setGender(g);
     }
 
     return (
         <div>
-            <div className={error !== null ? styles.error: styles.noError}>
-                {error}
-            </div>
+            <ErrorBar e={error}></ErrorBar>
             <div className={styles.container}>
                 <div className={styles.signup_title}>
                     <h1>Sign Up for Bear Buddies</h1>
@@ -185,7 +232,7 @@ function SignupPage() {
                         </div>
                         <div className="signup-btn-cont">
                             <Button 
-                                variant="primary" type="submit" className={styles.btn} href={path} onClick={handleSubmit}>
+                                variant="primary" type="submit" className={styles.btn} onClick={handleSubmit}>
                             Sign Up
                             </Button>
                         </div> 
