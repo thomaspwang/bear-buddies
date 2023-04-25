@@ -46,6 +46,9 @@ function SignupPage() {
             setError("Make sure passwords match");
             e.preventDefault();
             return;
+        } else if (password.length < 8) {
+            setError("Password must have at least 8 characters");
+            e.preventDefault();
         }
 
         if (emptyFields) {
