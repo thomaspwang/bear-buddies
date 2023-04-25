@@ -42,7 +42,6 @@ function SignupPage() {
             || password == '' || confirmPassword == '' || gender == '' 
             || graduationYear == '' || major == '';
 
-
         if (confirmPassword != password) {
             setError("Make sure passwords match");
             e.preventDefault();
@@ -75,15 +74,19 @@ function SignupPage() {
         }).then((response) => {
             if (response.ok) {
                 console.log("success");
-                router.push('/LoginPage/LoginPage')
+                router.push('/LoginPage/LoginPage');
                 return response.json()
             } else {
-                throw new Error("<insert error mssage>")
+                throw new Error("Email is already registered");
+                //goes straight to the catch suite
             }
         }).then((responseJson) => {
             // do something
+            // should i do something? --> all the data already goes to the database
         }).catch((error) => {
-            console.log(error)
+            console.log(error);
+            //will give 400 error if the email is registered according to backend routing
+            setError('Email is already registered');
         })
     }
 
