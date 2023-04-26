@@ -8,14 +8,11 @@ import { useAtom, atom} from "jotai";
 import {currUser} from '../../atoms.js';
 import ErrorBar from '@/components/ErrorBar/ErrorBar';
 import {useRouter} from 'next/router'
-// import {Navigate, useNavigate} from 'react-router-dom';
 
 
 function SignupPage() {
 
     const [user, setUser] = useAtom(currUser);
-
-    const [requestSuccessful, setRequestSuccessful] = useState(false);
 
     const [path, setPath] = useState();
 
@@ -35,9 +32,7 @@ function SignupPage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault(); 
-        console.log(firstName)
         setError(null);
-        //const emptyFields = inputs.some(input => !input);
         const emptyFields = firstName == '' || lastName == '' || email == '' 
             || password == '' || confirmPassword == '' || gender == '' 
             || graduationYear == '' || major == '';
@@ -49,10 +44,10 @@ function SignupPage() {
         } else if (password.length < 8) {
             setError("Password must have at least 8 characters");
             e.preventDefault();
+            return;
         }
 
         if (emptyFields) {
-            // If any fields are empty, set an error message
             setError("Please fill in all fields");
             console.log("not null");
             e.preventDefault();
@@ -76,57 +71,23 @@ function SignupPage() {
             })
         }).then((response) => {
             if (response.ok) {
-                console.log("success");
                 router.push('/LoginPage/LoginPage');
                 return response.json()
             } else {
                 throw new Error("Email is already registered");
-                //goes straight to the catch suite
             }
         }).then((responseJson) => {
-            // do something
-            // should i do something? --> all the data already goes to the database
+            console.log(responseJson);
+            console.log(user);
         }).catch((error) => {
-            console.log(error);
-            //will give 400 error if the email is registered according to backend routing
             setError('Email is already registered');
         })
     }
 
-        // try {
-        //     const response = await fetch('http://127.0.0.1:5000/signup', {
-        //         method: 'POST',
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //         },
-        //         body: JSON.stringify({
-        //             email,
-        //             password,
-        //             first_name: firstName,
-        //             last_name: lastName,
-        //             gender,
-        //             phone_number: phoneNumber,
-        //             graduation_year: graduationYear,
-        //             major
-        //         }),
-        //     });
-        //     if (response.ok) {
-        //         //setPath("../LoginPage/LoginPage");
-        //         console.log(response.json())
-        //         //navigate('/LoginPage/Log`inPage');
-        //     } else {
-        //         setError('This email is already registered');
-        //         e.preventDefault();
-        //     }
-        //     const data = await response.json();
-        //     console.log(data);
-        //     setUser(data);
-        //     //also need to check if the email is valid
-        //     //is there a way to check if data['success'] exits, if yes, then redirect to home
-        //     console.log(path);
-        // } catch (error) {
-        //     console.log(error.response);
-        // }
+    const handleChange = (event) => {
+        const {name, value} = event.target;
+        setUser((prevState) => ({...prevState, [name]: value}));
+    } 
 
     //------------------------------------------------
 
@@ -134,12 +95,14 @@ function SignupPage() {
     const handleSelectYear = (y) => {
         setYear(y);
         setGraduationYear(y);
+        setUser((prevState) => ({...prevState, 'graduation_year': y}));
     }
 
     const [chooseGender, setChooseGender] = useState("select gender ");
     const handleSelectGender = (g) => {
         setChooseGender(g);
         setGender(g);
+        setUser((prevState) => ({...prevState, 'gender': g}));
     }
 
     return (
@@ -157,16 +120,25 @@ function SignupPage() {
                         <div className={styles.col_cont}>
                             <div className={styles.col_items}>
                                 <label>first name</label>
-                                <input type="text" name="first_name" value={firstName} onChange={(e) => setFirstName(e.target.value)} className="form-control" required></input>
+                                <input type="text" name="first_name" value={firstName} onChange={(e) => {
+                                    setFirstName(e.target.value); 
+                                    handleChange(e);
+                                }} className="form-control" required></input>
                             </div>
                             <div className={styles.col_items}>
                                 <label>last name</label>
-                                <input type="text" name="last_name" value={lastName} onChange={(e) => setLastName(e.target.value)} className="form-control" required></input>
+                                <input type="text" name="last_name" value={lastName} onChange={(e) => {
+                                    setLastName(e.target.value);
+                                    handleChange(e);
+                                }} className="form-control" required></input>
                             </div>
                         </div>
                         <div className={styles.long_text_box}>
                             <label>email</label>
-                            <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" required></input>
+                            <input type="email" name="email" value={email} onChange={(e) => {
+                                setEmail(e.target.value);
+                                handleChange(e);
+                            }} className="form-control" required></input>
                         </div>
                         <div className={styles.col_cont}>
                             <div className={styles.col_items}>
@@ -184,7 +156,10 @@ function SignupPage() {
                                         onSelect={handleSelectGender}
                                         name="gender"
                                         value={gender}
-                                        onChange={(e) => setGender(e.target.value)}
+                                        onChange={(e) => {
+                                            setGender(e.target.value);
+                                            handleChange(e);
+                                        }}
                                     >
                                         <Dropdown.Item eventKey="female">female</Dropdown.Item>
                                         <Dropdown.Item eventKey="male">male</Dropdown.Item>
@@ -194,7 +169,10 @@ function SignupPage() {
                             </div>
                             <div className={styles.col_items}>
                                 <label>major</label>
-                                <input type="text" name="major" value={major} onChange={(e) => setMajor(e.target.value)} className="form-control" requiredTxt = "hello" required></input>
+                                <input type="text" name="major" value={major} onChange={(e) => {
+                                    setMajor(e.target.value);
+                                    handleChange(e);
+                                }} className="form-control" requiredTxt = "hello" required></input>
                             </div>
                         </div>
                         <div className={styles.col_cont}>
@@ -214,26 +192,46 @@ function SignupPage() {
                                         required
                                         name="graduation_year"
                                     >
-                                        <Dropdown.Item eventKey="2026" onChange={((e) => setGraduationYear(e.target.value))}>2026</Dropdown.Item>
-                                        <Dropdown.Item eventKey="2025" onChange={((e) => setGraduationYear(e.target.value))}>2025</Dropdown.Item>
-                                        <Dropdown.Item eventKey="2024" onChange={((e) => setGraduationYear(e.target.value))}>2024</Dropdown.Item>
-                                        <Dropdown.Item eventKey="2023" onChange={((e) => setGraduationYear(e.target.value))}>2023</Dropdown.Item>
+                                        <Dropdown.Item eventKey="2026" onChange={(e) => {
+                                            handleChange(e);
+                                            setGraduationYear(e.target.value);
+                                        }}>2026</Dropdown.Item>
+                                        <Dropdown.Item eventKey="2025" onChange={(e) => {
+                                            setGraduationYear(e.target.value);
+                                            handleChange(e);
+                                        }}>2025</Dropdown.Item>
+                                        <Dropdown.Item eventKey="2024" onChange={(e) => {
+                                            setGraduationYear(e.target.value);
+                                            handleChange(e);
+                                        }}>2024</Dropdown.Item>
+                                        <Dropdown.Item eventKey="2023" onChange={(e) => {
+                                            setGraduationYear(e.target.value);
+                                            handleChange(e);
+                                        }}>2023</Dropdown.Item>
                                     </DropdownButton>
                                 </div>
                             </div>
                             <div className={styles.col_items}>
                                 <label>phone number</label>
-                                <input type="text" name="phone_number" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} className="form-control" required></input>
+                                <input type="text" name="phone_number" value={phoneNumber} onChange={(e) => {
+                                    setPhoneNumber(e.target.value);
+                                    handleChange(e);
+                                }} className="form-control" required></input>
                             </div>
                         </div>
                         <div className={styles.col_cont}>
                             <div className={styles.col_items}>
                                 <label>password</label>
-                                <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-control" required></input>
+                                <input type="password" name="password" value={password} onChange={(e) => {
+                                    setPassword(e.target.value);
+                                    handleChange(e);
+                                }} className="form-control" required></input>
                             </div>
                             <div className={styles.col_items}>
                                 <label>confirm password</label>
-                                <input type="password" className="form-control" name="confirm_password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required></input>
+                                <input type="password" className="form-control" name="confirm_password" value={confirmPassword} onChange={(e) => {
+                                    setConfirmPassword(e.target.value);
+                                }} required></input>
                             </div>
                         </div>
                         <div className="signup-btn-cont">
