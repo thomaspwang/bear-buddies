@@ -69,13 +69,13 @@ def delete_user():
 
 @app.route('/get-user', methods = ['GET'])
 def get_user():
-    idNum = request.json['id']
+    idNum = request.args.get('id')
     returnedUser = User.objects.get(id=idNum)
     return jsonify(returnedUser)
 
 @app.route('/get-event', methods = ['GET'])
 def get_event():
-    idNum = request.json['id']
+    idNum = request.args.get('id')
     returnedEvent = Event.objects.get(id=idNum)
     return jsonify(returnedEvent)
 

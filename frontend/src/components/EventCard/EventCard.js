@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Image from 'next/image'
 import Button from 'react-bootstrap/Button';
 import Badge from '../../../public/badge';
@@ -19,6 +19,11 @@ function OwnerBadge() {
     )
 }
 
+function formatDate(string){
+    var options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(string).toLocaleDateString([],options);
+}
+
 function EventCard( {title, image, author, authorPic, maxCap, currCap, location, time, description, joined, owner} ) {
     EventCard.propTypes = {
         title: String,
@@ -33,6 +38,21 @@ function EventCard( {title, image, author, authorPic, maxCap, currCap, location,
         joined: Boolean,
         owner: Boolean,
     }
+    const [userName, setUserName] = useState("");
+
+    useEffect(() => {
+        if (author) {
+            const url = "http://localhost:5000/get-user?id=" + author
+            console.log(url)
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                setUserName(data.first_name + " " + data.last_name)
+            })
+        } 
+    }, [])
+
+    const date = formatDate(time)
 
     let buttonText;
     if (joined) {
@@ -47,7 +67,6 @@ function EventCard( {title, image, author, authorPic, maxCap, currCap, location,
     } else {
         badge = <div />
     }
-    
     return (
         <div>
             <div className={styles.active}>
@@ -63,11 +82,11 @@ function EventCard( {title, image, author, authorPic, maxCap, currCap, location,
                     <div className={styles.info}>
                         <div className={styles.iconText}>
                             <Image className={styles.pfp} src={authorPic} alt="face" width="21" height="21" />
-                            <p id={styles.para}>{author}</p>
+                            <p id={styles.para}>{userName}</p>
                         </div>
                         <div className={styles.iconText}>
                             <Clock />
-                            <p id={styles.para}>{time}</p>
+                            <p id={styles.para}>{date}</p>
                         </div>
                         <div className={styles.iconText}>
                             <Location />

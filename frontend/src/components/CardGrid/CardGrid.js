@@ -7,8 +7,7 @@ function CardGrid( {cardData} ) {
         <div>
             <Row xs={3}>
             {cardData.map((i) => {
-              console.log(i.particpants)
-              const currParticipants = i.particpants;
+              const currParticipants = i.participants;
               let currCap;
               if (currParticipants) {
                 currCap = currParticipants.length;

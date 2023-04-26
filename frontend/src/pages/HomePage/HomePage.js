@@ -17,7 +17,6 @@ function HomePage() {
             setEvents(data)
         })
     }, [])
-
     return (
         <div> 
                 <NavBar page={0}> </NavBar>
