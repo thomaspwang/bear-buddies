@@ -38,12 +38,18 @@ def create_user():
 @app.route('/create-event', methods = ['POST'])
 def create_event():
     date = datetime.datetime.strptime(request.json['time'], '%Y-%m-%d %H:%M:%S')
+    if ("participants" in request.get_json()):
+        people = request.json['participants']
+    else:
+        people = []
     new_event = Event(
         title = request.json['title'],
         time = date,
         description = request.json['description'],
         max_participants = request.json['max_participants'],
+        location = request.json['location'],
         owner = request.json['owner'],
+        participants = people
     ).save()
     return jsonify(new_event)
 
