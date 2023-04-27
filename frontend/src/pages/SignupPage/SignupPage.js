@@ -14,8 +14,6 @@ function SignupPage() {
 
     const [user, setUser] = useAtom(currUser);
 
-    const [path, setPath] = useState();
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -37,18 +35,19 @@ function SignupPage() {
             || password == '' || confirmPassword == '' || gender == '' 
             || graduationYear == '' || major == '';
 
-        if (confirmPassword != password) {
+            if (emptyFields) {
+                setError("Please fill in all fields");
+                e.preventDefault();
+                return;
+            }
+        
+            if (confirmPassword != password) {
             setError("Make sure passwords match");
             e.preventDefault();
             return;
+
         } else if (password.length < 8) {
             setError("Password must have at least 8 characters");
-            e.preventDefault();
-            return;
-        }
-
-        if (emptyFields) {
-            setError("Please fill in all fields");
             e.preventDefault();
             return;
         }
@@ -71,11 +70,12 @@ function SignupPage() {
         }).then((response) => {
             if (response.ok) {
                 router.push('/LoginPage/LoginPage');
-                return response.json()
+                return response.json();
             } else {
                 throw new Error("Email is already registered");
             }
         }).then((responseJson) => {
+            console.log(responseJson);
         }).catch((error) => {
             setError('Email is already registered');
         })
