@@ -49,7 +49,6 @@ function SignupPage() {
 
         if (emptyFields) {
             setError("Please fill in all fields");
-            console.log("not null");
             e.preventDefault();
             return;
         }
@@ -77,8 +76,6 @@ function SignupPage() {
                 throw new Error("Email is already registered");
             }
         }).then((responseJson) => {
-            console.log(responseJson);
-            console.log(user);
         }).catch((error) => {
             setError('Email is already registered');
         })
