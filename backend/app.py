@@ -80,7 +80,7 @@ def login():
         return jsonify({'error': 'Invalid email or password'}), 400
     
     session['user_id'] = str(user.id)
-    return jsonify({'success': 'Login successful'})
+    return jsonify(user);
     
 
 

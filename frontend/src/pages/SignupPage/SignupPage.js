@@ -69,7 +69,7 @@ function SignupPage() {
             })
         }).then((response) => {
             if (response.ok) {
-                router.push('/LoginPage/LoginPage');
+                router.push('/HomePage/HomePage');
                 return response.json();
             } else {
                 throw new Error("Email is already registered");

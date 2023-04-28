@@ -1,15 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from "react-bootstrap/Button";
 import styles from './LoginPage.module.css';
 import ErrorBar from "@/components/ErrorBar/ErrorBar";
 import { useRouter } from "next/router";
 import { useAtom } from "jotai";
-import { signedIn } from "@/atoms";
+import { currUser } from "@/atoms";
+
 
 function LoginPage() {
 
-    const [userSignedIn, setUserSignedIn] = useAtom(signedIn);
+    const [user, setUser] = useAtom(currUser);
+
+    useEffect(() => {
+        console.log("current user:", user);
+    }, [user]);
 
     const [error, setError] = useState(null);
     const router = useRouter();
@@ -37,21 +42,17 @@ function LoginPage() {
             })
         }).then((response) => {
             if (response.ok) {
-                router.push('/HomePage/HomePage');
-                console.log("hi");
-                setUserSignedIn(true);
                 return response.json();
             } else {
                 throw new Error("Invalid email or password");
             }
         }).then((responseJson) => {
-            console.log(responseJson);
-            setUserSignedIn(true);
+            setUser(responseJson);
+            router.push('/HomePage/HomePage');
         }).catch((error) => {
-            console.log("error");
+            console.log(error);
             setError("Invalid email or password");
         })
-        
     }
 
     return (
