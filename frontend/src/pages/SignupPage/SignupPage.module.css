@@ -76,3 +76,19 @@
     font-size: 18px;
     font-weight: 600;
 }
+
+.error {
+    display: flex;
+    align-items: center;
+    background-color: #ff6961;
+    color: #fff;
+    justify-content: center;
+    padding: 5px;
+    font-size: 1.2rem;
+  }
+
+.noError {
+    padding: 0px;
+    background-color: #fff;
+    font-size: 0px;
+}
