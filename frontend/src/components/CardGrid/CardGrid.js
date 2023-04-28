@@ -16,7 +16,7 @@ function CardGrid( {cardData} ) {
               }
                 return (
                   <Col>
-                    <EventCard title={i.title} image={i.image} author={i.owner.$oid} authorPic={i.authorPic} maxCap={i.max_participants} currCap={currCap} location={i.location} time={i.time.$date} description={i.description} joined={i.joined} owner={i.owner}></EventCard>
+                    <EventCard title={i.title} image={i.image} author={i.owner.$oid} authorPic={i.authorPic} maxCap={i.max_participants} currCap={currCap} location={i.location} time={i.time.$date} description={i.description} eventID={i._id.$oid}></EventCard>
                   </Col>
                 )
             })}

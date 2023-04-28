@@ -24,7 +24,7 @@ function formatDate(string){
     return new Date(string).toLocaleDateString([],options);
 }
 
-function EventCard( {title, image, author, authorPic, maxCap, currCap, location, time, description, joined, owner} ) {
+function EventCard( {title, image, author, authorPic, maxCap, currCap, location, time, description, eventID} ) {
     EventCard.propTypes = {
         title: String,
         image: String,
@@ -51,6 +51,34 @@ function EventCard( {title, image, author, authorPic, maxCap, currCap, location,
             })
         } 
     }, [])
+
+    const [joined, setJoined] = useState(false);
+/* 
+    useEffect(() => {
+        if (author) {
+            const url = "http://localhost:5000/get-user?id=" + <CURRENT USER ID>
+            console.log(url)
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                setJoined((data.groups_participating).includes(eventID))
+            })
+        } 
+    }, []) */
+
+    const [owner, setOwner] = useState(false);
+/* 
+    useEffect(() => {
+        if (author) {
+            const url = "http://localhost:5000/get-user?id=" + <CURRENT USER ID>
+            console.log(url)
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                setOwner((data.groups_owned).includes(eventID))
+            })
+        } 
+    }, []) */
 
     const date = formatDate(time)
 
