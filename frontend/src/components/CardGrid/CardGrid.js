@@ -5,7 +5,7 @@ import EventCard from "../EventCard/EventCard";
 function CardGrid( {cardData} ) {
     return (
         <div>
-            <Row xs={3}>
+            <Row xs="auto">
             {cardData.map((i) => {
                 return (
                   <Col>
